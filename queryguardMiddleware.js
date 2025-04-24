@@ -10,7 +10,8 @@ function qgMiddleware(req, res, next) {
         endpoint : req.originalUrl,     // where req made (/login, /search, ...)
         ip : req.ip,                    // IP addy of user making req
         headers : req.headers,          // headers (agent, cookies, ...)
-        body : req.body                 // data send by user (what they type into field)
+        body : req.body,                 // data send by user (what they type into field)
+        timestamp : new Date().toISOString(), // save date & time
     };
 
     // send log data to QG API endpoint
